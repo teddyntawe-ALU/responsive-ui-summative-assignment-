@@ -1,1 +1,5 @@
-# responsive-ui-summative-assignment-
+Teddy - The Campus Planner
+
+
+ Overview 
+ 
