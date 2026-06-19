@@ -1,6 +1,6 @@
 # Tedly – The Campus Planner
 
-![App Preview](assets/img/pre.png.png)
+![App Preview](assets/img/pre.png)
 
 ## Developer
 
