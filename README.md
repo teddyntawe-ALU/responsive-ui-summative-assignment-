@@ -1,5 +1,7 @@
 # Tedly – The Campus Planner
 
+![App Preview](assets/img/pre.png.png)
+
 ## Developer
 
 **Teddy Ntawe**
