@@ -12,6 +12,7 @@ The goal of the application is to make planning easier by giving students a clea
 
 The dashboard provides a quick overview of your workload, including:
 
+(Coming Soon)
 Total number of events
 Total time allocated to tasks
 Most frequently used category
@@ -22,6 +23,7 @@ Weekly study time cap tracking
 
 Users can:
 
+(Coming Soon)
 Add new events
 Edit existing events
 Delete events
@@ -31,6 +33,7 @@ Include details such as title, category, due date, duration, and notes
 
 The records section allows users to:
 
+(Coming Soon)
 View all saved events
 Search for specific records
 Sort events by date, title, or duration
