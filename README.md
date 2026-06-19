@@ -43,6 +43,8 @@ Access a mobile-friendly card view for smaller screens
 
 Users can customize their experience by:
 
+
+(Features coming soon)
 Enabling or disabling reminders
 Choosing reminder timings
 Setting the first day of the week
