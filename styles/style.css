@@ -11,7 +11,6 @@ html {
 body {
     position: relative;
     background-color: #0a0a0c;
-    background-image: url("assets/img/bg-alu.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
