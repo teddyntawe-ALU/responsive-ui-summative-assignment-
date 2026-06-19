@@ -1,5 +1,14 @@
 # Tedly – The Campus Planner
 
+## Developer
+
+**Teddy Ntawe - Developer**
+
+GitHub: https://github.com/teddyntawe-ALU
+
+Email: [t.ntawe@alustudent.com](mailto:t.ntawe@alustudent.com)
+
+
 ## Overview
 
 Tedly is a simple campus planner built to help students stay on top of their academic responsibilities. Whether it's an assignment, project, quiz, or personal study session, Tedly provides a central place to organize tasks, track deadlines, and manage time more effectively.
@@ -62,13 +71,6 @@ CSS3
 JavaScript (Vanilla JS)
 Local Storage
 
-## Developer
-
-**Teddy Ntawe - Developer**
-
-GitHub: https://github.com/teddyntawe-ALU
-
-Email: [t.ntawe@alustudent.com](mailto:t.ntawe@alustudent.com)
 
 ## Purpose
 
