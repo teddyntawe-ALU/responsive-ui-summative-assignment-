@@ -64,7 +64,7 @@ Local Storage
 
 ## Developer
 
-**Teddy Ntawe**
+**Teddy Ntawe - Developer**
 
 GitHub: https://github.com/teddyntawe-ALU
 
