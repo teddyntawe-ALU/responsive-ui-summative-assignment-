@@ -2,7 +2,7 @@
 
 ## Developer
 
-**Teddy Ntawe - Developer**
+**Teddy Ntawe**
 
 GitHub: https://github.com/teddyntawe-ALU
 
