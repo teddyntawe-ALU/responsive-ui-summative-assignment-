@@ -1,3 +1,5 @@
+//nav page interactions //
+
 const panelLinks = document.querySelectorAll(".panel-link");
 const pageSections = document.querySelectorAll(".page-section");
 
