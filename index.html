@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/icons/june.png">
+
+    <link rel="stylesheet" href="/styles/style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <title>Tedly - Campus Planner</title>
+
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-wrapper">
+
+        <header class="top-bar">
+            <img src="/assets/icons/june.png" alt="logo" class="site-logo">
+            <h1 class="site-name">Tedly</h1>
+        </header>
+
+        <div class="main-layout">
+
+            <aside class="side-panel">
+                <nav class="panel-links">
+                    <button class="panel-link active" data-page="home">Home</button>
+                    <button class="panel-link" data-page="records">Records</button>
+                    <button class="panel-link" data-page="add-event">Add Event</button>
+                    <button class="panel-link" data-page="settings">Settings</button>
+                    <button class="panel-link" data-page="about">About</button>
+                </nav>
+            </aside>
+
+            <main class="content-area">
+
+                <!-- Home -->
+                <section class="page-section" id="home" style="display:block;">
+
+                    <h2 class="page-title">Dashboard</h2>
+
+                    <!-- stat cards -->
+                    <div class="stats-grid" id="stats-grid">
+
+                        <div class="stat-card">
+                            <span class="stat-label">Total events</span>
+                            <span class="stat-value" id="stat-total">0</span>
+                        </div>
+
+                        <div class="stat-card">
+                            <span class="stat-label">Total minutes</span>
+                            <span class="stat-value" id="stat-sum">0</span>
+                        </div>
+
+                        <div class="stat-card">
+                            <span class="stat-label">Top category</span>
+                            <span class="stat-value" id="stat-top-category">None yet</span>
+                        </div>
+
+                        <div class="stat-card">
+                            <span class="stat-label">Last 7 days</span>
+                            <div class="mini-trend" id="trend-chart"></div>
+                        </div>
+
+                    </div>
+
+                    <!-- target -->
+                    <div class="cap-block">
+                        <p class="cap-label">Weekly time cap</p>
+                        <p class="cap-status" id="cap-status" aria-live="polite">No cap set yet</p>
+                    </div>
+
+                    <!-- on normal -->
+                    <div class="empty-state" id="empty-dashboard">
+                        <p class="empty-text">Nothing on your plate yet. Add your first event to get going.</p>
+                    </div>
+
+                    <!-- after events -->
+                    <div class="card-grid" id="event-cards" style="display:none;">
+
+                        <div class="event-card">
+                            <span class="card-tag">Assignment</span>
+                            <h3 class="card-title">Math Project</h3>
+                            <p class="card-detail">Due 2025-09-29</p>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- Records -->
+                <section class="page-section" id="records" style="display:none;">
+
+                    <h2 class="page-title">Records</h2>
+
+                    <div class="records-toolbar">
+                        <input class="form-input search-input" type="text" id="search-input"
+                            placeholder="Search ">
+
+        
+
+                        <span class="search-error" id="search-error"></span>
+                    </div>
+
+                    <div class="sort-toolbar">
+                        <span class="sort-label">Sort by</span>
+                        <button class="sort-button" data-sort="date">Date</button>
+                        <button class="sort-button" data-sort="title">Title A to Z</button>
+                        <button class="sort-button" data-sort="amount">Duration</button>
+                    </div>
+
+                    
+                    <div class="table-wrapper" id="records-table-wrapper">
+                        <table class="records-table" id="records-table">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Category</th>
+                                    <th>Date</th>
+                                    <th>Minutes</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="records-table-body">
+                            
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- mobile-->
+                    <div class="record-card-list" id="record-card-list">
+                        <!-- cards will go here -->
+                    </div>
+
+                    <div class="empty-state" id="empty-records">
+                        <p class="empty-text">No records to show yet.</p>
+                    </div>
+
+                </section>
+
+                <!-- add event -->
+                <section class="page-section" id="add-event" style="display:none;">
+                    <h2 class="page-title" id="form-heading">Add Event</h2>
+
+                    <form class="event-form" id="event-form">
+
+                        <input type="hidden" id="event-id">
+
+                        <label class="form-label" for="event-name">Title</label>
+                        <input class="form-input" type="text" id="event-name"
+                            placeholder="School Work"
+                            pattern="^\S(?:.*\S)?$">
+                        <span class="field-error" id="event-name-error"></span>
+
+                        <label class="form-label" for="event-category">Category</label>
+                        <input class="form-input" type="text" id="event-category"
+                            placeholder="e.g. Assignment"
+                            pattern="^[A-Za-z]+(?:[ -][A-Za-z]+)*$">
+                        <span class="field-error" id="event-category-error"></span>
+
+                        <label class="form-label" for="event-date">Due date</label>
+                        <input class="form-input" type="text" id="event-date"
+                            placeholder="YYYY-MM-DD"
+                            pattern="^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$">
+                        <span class="field-error" id="event-date-error"></span>
+
+                        <label class="form-label" for="event-duration">Duration (minutes)</label>
+                        <input class="form-input" type="text" id="event-duration"
+                            placeholder="e.g. 90mins"
+                            pattern="^(0|[1-9]\d*)(\.\d{1,2})?$">
+                        <span class="field-error" id="event-duration-error"></span>
+
+                        <label class="form-label" for="event-notes">Notes</label>
+                        <textarea class="form-input" id="event-notes" rows="4"
+                            placeholder="Any extra details"></textarea>
+                        <span class="field-error" id="event-notes-error"></span>
+
+                        <div class="form-buttons">
+                            <button type="submit" class="form-submit" id="form-submit-button">Save Event</button>
+                            <button type="button" class="form-cancel" id="form-cancel-button">Cancel Edit</button>
+                        </div>
+
+                    </form>
+                </section>
+
+                <!-- seetings -->
+                <section class="page-section" id="settings" style="display:none;">
+                    <h2 class="page-title">Settings</h2>
+
+                    <div class="settings-block">
+                        <label class="form-label" for="notif-toggle">Event reminders</label>
+                        <select class="form-input" id="notif-toggle">
+                            <option value="on">On</option>
+                            <option value="off">Off</option>
+                        </select>
+                    </div>
+
+                    <div class="settings-block">
+                        <label class="form-label" for="reminder-time">Remind me</label>
+                        <select class="form-input" id="reminder-time">
+                            <option value="1day">1 day before</option>
+                            <option value="3days">3 days before</option>
+                            <option value="1week">1 week before</option>
+                        </select>
+                    </div>
+
+                    <div class="settings-block">
+                        <label class="form-label" for="week-start">Week starts on</label>
+                        <select class="form-input" id="week-start">
+                            <option value="monday">Monday</option>
+                            <option value="sunday">Sunday</option>
+                        </select>
+                    </div>
+
+                    <div class="settings-block">
+                        <label class="form-label" for="time-unit">Show durations in</label>
+                        <select class="form-input" id="time-unit">
+                            <option value="minutes">Minutes</option>
+                            <option value="hours">Hours</option>
+                        </select>
+                    </div>
+
+                    <div class="settings-block">
+                        <label class="form-label" for="weekly-cap">Weekly time cap (minutes)</label>
+                        <input class="form-input" type="text" id="weekly-cap" placeholder="e.g. 600"
+                            pattern="^(0|[1-9]\d*)$">
+                    </div>
+
+                    
+
+                    <button class="form-submit" id="settings-save">Save Settings</button>
+                </section>
+
+                <!-- about -->
+                <section class="page-section" id="about" style="display:none;">
+                    <h2 class="page-title">About</h2>
+                    <p class="about-text">
+                        Tedly is a campus planner built for students who have a lot going on and not a lot of time
+                        to keep track of it all. Instead of juggling sticky notes, group chat reminders and a
+                        dozen half finished to do lists, everything lands in one place.
+                    </p>
+                    <p class="about-text">
+                        Whether it is a summative assignment due monday, a quiz worth more than it should be, or
+                        just something small you do not want to forget, Tedly gives it a home on your dashboard
+                        so you can see what is coming up at a glance.
+                    </p>
+                    <p class="about-text">
+                        The idea behind it is simple. School already asks enough of your attention. Tracking your
+                        own deadlines should not be the hard part.
+                    </p>
+
+                    <div class="contact-block">
+                        <h3 class="contact-heading">Get in touch</h3>
+                        <ul class="contact-list">
+                            <li class="contact-item">
+                                <span class="contact-label">GitHub</span>
+                                <a class="contact-link" href="https://github.com/teddyntawe-ALU" target="_blank" rel="noopener">github.com/teddyntawe-ALU</a>
+                            </li>
+                            <li class="contact-item">
+                                <span class="contact-label">Email</span>
+                                <a class="contact-link" href="#">t.ntawe@alustudent.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+            </main>
+
+        </div>
+    </div>
+
+    <script src="/scripts/app.js"></script>
+</body>
+
+</html>
