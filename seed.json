@@ -1,0 +1,27 @@
+{
+  "events": [
+    {
+      "id": "sample-1",
+      "title": "Math Project",
+      "category": "Assignment",
+      "dueDate": "2026-07-01",
+      "duration": 90,
+      "notes": "Finish the project draft"
+    },
+    {
+      "id": "sample-2",
+      "title": "Biology Quiz Review",
+      "category": "Quiz",
+      "dueDate": "2026-07-03",
+      "duration": 45,
+      "notes": "Review chapter notes"
+    }
+  ],
+  "settings": {
+    "reminders": "on",
+    "reminderTime": "1day",
+    "weekStart": "monday",
+    "timeUnit": "minutes",
+    "weeklyCap": 600
+  }
+}

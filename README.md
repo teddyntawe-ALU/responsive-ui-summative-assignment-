@@ -1,4 +1,4 @@
-# Tedly – The Campus Planner
+# Tedly - The Campus Planner
 
 ![App Preview](assets/img/pre.png)
 
@@ -7,73 +7,130 @@
 **Teddy Ntawe**
 
 GitHub: https://github.com/teddyntawe-ALU
-
 Email: [t.ntawe@alustudent.com](mailto:t.ntawe@alustudent.com)
-
+Github Pages 
 
 ## Overview
 
-Tedly is a simple campus planner built to help students stay on top of their academic responsibilities. Whether it's an assignment, project, quiz, or personal study session, Tedly provides a central place to organize tasks, track deadlines, and manage time more effectively.
+Tedly is a simple campus planner built to help students stay on top of their academic responsibilities. Students can use it to plan assignments, projects, quizzes, and study sessions in one place.
 
-The goal of the application is to make planning easier by giving students a clear overview of what needs to be done and when it needs to be completed.
+The main goal is to make school planning easier by showing what needs to be done, when it is due, and how much time it may take.
+
+## Basic Wireframes
+
+Desktop layout:
+
+```text
+Header / Logo
+------------------------------------------------
+Side Menu        Main Content Area
+Home             Dashboard cards
+Records          Records table
+Add Event        Event form
+Settings         Settings form
+About            About text
+```
+
+Mobile layout:
+
+```text
+Logo + Menu Button
+------------------------------------------------
+Collapsible Menu
+------------------------------------------------
+Main Content Area
+Dashboard cards / form / records cards
+```
+
+## Data Model
+
+Each planner event will use this basic shape:
+
+```js
+{
+  id: "sample-1",
+  title: "Math Project",
+  category: "Assignment",
+  dueDate: "2026-07-01",
+  duration: 90,
+  notes: "Finish the project draft"
+}
+```
+
+Settings will use this basic shape:
+
+```js
+{
+  reminders: "on",
+  reminderTime: "1day",
+  weekStart: "monday",
+  timeUnit: "minutes",
+  weeklyCap: 600
+}
+```
+
+## Accessibility Plan
+
+- Use semantic page areas such as header, navigation, main content, sections, tables, forms, and buttons.
+- Keep labels connected to form fields.
+- Use ARIA live regions for validation, search, and cap status messages.
+- Make the mobile menu keyboard accessible.
+- Keep visible focus states for buttons and inputs.
+- Check the app using keyboard-only navigation before the final submission.
 
 ## Features
 
 ### Dashboard
 
-The dashboard provides a quick overview of your workload, including:
-
-(Coming Soon)
-Total number of events
-Total time allocated to tasks
-Most frequently used category
-Activity trends from the past seven days
-Weekly study time cap tracking
+The dashboard will show total events, total minutes, top category, weekly activity, and weekly cap status.
 
 ### Event Management
 
-Users can:
-
-(Coming Soon)
-Add new events
-Edit existing events
-Delete events
-Include details such as title, category, due date, duration, and notes
+Users will be able to add, edit, and delete planner events with title, category, due date, duration, and notes.
 
 ### Records
 
-The records section allows users to:
-
-(Coming Soon)
-View all saved events
-Search for specific records
-Sort events by date, title, or duration
-Access a mobile-friendly card view for smaller screens
+The records section will show saved events in a table on desktop and cards on mobile. It will support sorting and regex search.
 
 ### Settings
 
-Users can customize their experience by:
+Users will be able to save preferences such as reminders, week start day, duration unit, and weekly time cap.
 
+## Project Structure
 
-(Features coming soon)
-Enabling or disabling reminders
-Choosing reminder timings
-Setting the first day of the week
-Selecting how durations are displayed
-Defining a weekly time cap
+```text
+index.html
+tests.html
+seed.json
+assets/
+styles/
+  style.css
+scripts/
+  app.js
+  storage.js
+  state.js
+  ui.js
+  validators.js
+  search.js
+```
 
-### Responsive Design
+## Milestone Checklist
 
-The application is fully responsive and adapts seamlessly across desktop, tablet, and mobile devices.
+- M1 - Spec and Wireframes: in progress/completed for first version
+- M2 - Semantic HTML and Base CSS: in progress/completed for first version
+- M3 - Forms and Regex Validation: planned
+- M4 - Render, Sort, and Regex Search: planned
+- M5 - Stats and Cap Targets: planned
+- M6 - Persistence, Import/Export, and Settings: planned
+- M7 - Polish and Accessibility Audit: planned
 
 ## Technologies Used
 
-HTML5
-CSS3
-JavaScript (Vanilla JS)
-Local Storage
+- HTML
+- CSS
+- JavaScript
+- Local Storage
 
+## Testing
 
-## Purpose
-
-This project was developed as part of a Responsive UI Summative Assignment. It demonstrates the use of responsive web design, form validation, dynamic user interfaces, and client-side data storage to create a practical productivity tool for students.
+The project includes `tests.html` as the page where validator and search tests will be added during the next phases.
