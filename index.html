@@ -160,38 +160,38 @@
                 <section class="page-section" id="add-event" style="display:none;">
                     <h2 class="page-title" id="form-heading">Add Event</h2>
 
-                    <form class="event-form" id="event-form">
+                    <form class="event-form" id="event-form" novalidate>
 
                         <input type="hidden" id="event-id">
 
-                        <label class="form-label" for="event-name">Title</label>
+                        <label class="form-label">Title</label>
                         <input class="form-input" type="text" id="event-name"
                             placeholder="School Work"
                             pattern="^\S(?:.*\S)?$">
-                        <span class="field-error" id="event-name-error"></span>
+                        <span class="field-error" id="event-name-error" aria-live="polite"></span>
 
-                        <label class="form-label" for="event-category">Category</label>
+                        <label class="form-label" >Category</label>
                         <input class="form-input" type="text" id="event-category"
                             placeholder="e.g. Assignment"
                             pattern="^[A-Za-z]+(?:[ -][A-Za-z]+)*$">
-                        <span class="field-error" id="event-category-error"></span>
+                        <span class="field-error" id="event-category-error" aria-live="polite"></span>
 
-                        <label class="form-label" for="event-date">Due date</label>
+                        <label class="form-label">Due date</label>
                         <input class="form-input" type="text" id="event-date"
                             placeholder="YYYY-MM-DD"
                             pattern="^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$">
-                        <span class="field-error" id="event-date-error"></span>
+                        <span class="field-error" id="event-date-error" aria-live="polite"></span>
 
-                        <label class="form-label" for="event-duration">Duration (minutes)</label>
-                        <input class="form-input" type="text" id="event-duration"
-                            placeholder="e.g. 90mins"
-                            pattern="^(0|[1-9]\d*)(\.\d{1,2})?$">
-                        <span class="field-error" id="event-duration-error"></span>
+                        <label class="form-label">Duration (minutes)</label>
+                        <input class="form-input" type="text" id="event-duration" inputmode="numeric"
+                            placeholder="e.g. 90"
+                            pattern="^[1-9]\d*$">
+                        <span class="field-error" id="event-duration-error" aria-live="polite"></span>
 
-                        <label class="form-label" for="event-notes">Notes</label>
+                        <label class="form-label">Notes</label>
                         <textarea class="form-input" id="event-notes" rows="4"
                             placeholder="Any extra details"></textarea>
-                        <span class="field-error" id="event-notes-error"></span>
+                        <span class="field-error" id="event-notes-error" aria-live="polite"></span>
 
                         <div class="form-buttons">
                             <button type="submit" class="form-submit" id="form-submit-button">Save Event</button>

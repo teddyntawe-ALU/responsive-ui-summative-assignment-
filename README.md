@@ -100,8 +100,7 @@ Users will be able to save preferences such as reminders, week start day, durati
 
 ```text
 index.html
-tests.html
-seed.json
+demo-data.json
 assets/
 styles/
   style.css
@@ -118,8 +117,8 @@ scripts/
 
 - M1 - Spec and Wireframes: in progress/completed for first version
 - M2 - Semantic HTML and Base CSS: in progress/completed for first version
-- M3 - Forms and Regex Validation: planned
-- M4 - Render, Sort, and Regex Search: planned
+- M3 - Forms and Regex Validation: in progress/completed for first version
+- M4 - Render, Sort, and Regex Search: in progress/completed for first version
 - M5 - Stats and Cap Targets: planned
 - M6 - Persistence, Import/Export, and Settings: planned
 - M7 - Polish and Accessibility Audit: planned
@@ -133,4 +132,4 @@ scripts/
 
 ## Testing
 
-The project includes `tests.html` as the page where validator and search tests will be added during the next phases.
+Testing is mostly manual for now. Main things to check are adding events, validation errors, editing, deleting, sorting and regex searching.
