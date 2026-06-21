@@ -6,15 +6,28 @@
 
 **Teddy Ntawe**
 
-GitHub: https://github.com/teddyntawe-ALU
-Email: [t.ntawe@alustudent.com](mailto:t.ntawe@alustudent.com)
-Github Pages 
+GitHub: https://github.com/teddyntawe-ALU  
+Email: [t.ntawe@alustudent.com](mailto:t.ntawe@alustudent.com)  
+Github Pages: https://teddyntawe-alu.github.io/responsive-ui-summative-assignment-/
+Demo Video: https://www.youtube.com
 
 ## Overview
 
 Tedly is a simple campus planner built to help students stay on top of their academic responsibilities. Students can use it to plan assignments, projects, quizzes, and study sessions in one place.
 
 The main goal is to make school planning easier by showing what needs to be done, when it is due, and how much time it may take.
+
+## Features
+
+- Add, edit, and delete academic events.
+- Validate form inputs before saving.
+- View records in a desktop table and mobile card layout.
+- Sort records by date, title, or duration.
+- Search records using regex patterns.
+- Highlight matching search results.
+- Save events and settings using localStorage.
+- Export and import planner data as JSON.
+- Track total events, total study time, top category, weekly cap, and last 7 days activity.
 
 ## Basic Wireframes
 
@@ -44,7 +57,7 @@ Dashboard cards / form / records cards
 
 ## Data Model
 
-Each planner event will use this basic shape:
+Each planner event uses this basic shape:
 
 ```js
 {
@@ -57,7 +70,7 @@ Each planner event will use this basic shape:
 }
 ```
 
-Settings will use this basic shape:
+Settings use this basic shape:
 
 ```js
 {
@@ -69,32 +82,30 @@ Settings will use this basic shape:
 }
 ```
 
-## Accessibility Plan
+## Regex Rules
 
-- Use semantic page areas such as header, navigation, main content, sections, tables, forms, and buttons.
-- Keep labels connected to form fields.
-- Use ARIA live regions for validation, search, and cap status messages.
-- Make the mobile menu keyboard accessible.
-- Keep visible focus states for buttons and inputs.
-- Check the app using keyboard-only navigation before the final submission.
+- Title: must not be empty or only spaces.
+- Category: only letters, spaces, and hyphens are allowed.
+- Due date: must match the `YYYY-MM-DD` date format.
+- Duration: must be a whole number greater than zero.
+- Notes: allows normal text, but blocks script-like text such as script tags, `javascript:`, `onclick=`, and `onerror=`.
+- Search: the records search box compiles the typed text as a regex. Invalid regex patterns show an error message instead of crashing the app.
 
-## Features
+## Accessibility Notes
 
-### Dashboard
+- The app uses semantic page areas such as header, navigation, main content, sections, tables, forms, and buttons.
+- Important status messages use `aria-live`, including validation, search, settings, and weekly cap feedback.
+- A skip link is included for keyboard users.
+- The mobile menu can be opened with the keyboard and closed with Escape.
+- Buttons and inputs have visible focus styles.
+- Reduced motion support is included for users who prefer less animation.
 
-The dashboard will show total events, total minutes, top category, weekly activity, and weekly cap status.
+## Keyboard Map
 
-### Event Management
-
-Users will be able to add, edit, and delete planner events with title, category, due date, duration, and notes.
-
-### Records
-
-The records section will show saved events in a table on desktop and cards on mobile. It will support sorting and regex search.
-
-### Settings
-
-Users will be able to save preferences such as reminders, week start day, duration unit, and weekly time cap.
+- Tab: move through links, buttons, inputs, and controls.
+- Enter or Space: activate buttons.
+- Escape: close the mobile menu.
+- Search input: type a regex pattern to filter records.
 
 ## Project Structure
 
@@ -104,6 +115,7 @@ demo-data.json
 assets/
 styles/
   style.css
+  responsive.css
 scripts/
   app.js
   storage.js
@@ -122,4 +134,17 @@ scripts/
 
 ## Testing
 
-Testing is mostly manual for now. Main things to check are adding events, validation errors, editing, deleting, sorting and regex searching.
+Testing is mostly manual for now. Main things to check:
+
+- Add a valid event and confirm it appears in Records and Dashboard.
+- Try invalid form inputs and confirm error messages show.
+- Edit an event and confirm the updated values render.
+- Delete an event and confirm it is removed.
+- Sort by date, title, and duration.
+- Search with a normal word like `quiz`.
+- Search with a regex pattern like `Assignment|Quiz`.
+- Try a broken regex like `[` and confirm the app shows an error.
+- Refresh the page and confirm saved events remain.
+- Export JSON, then import it again.
+- Test mobile menu and mobile card layout.
+

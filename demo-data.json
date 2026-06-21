@@ -1,20 +1,68 @@
 {
   "events": [
     {
-      "id": "sample-1",
+      "id": "demo-1",
       "title": "Math Project",
       "category": "Assignment",
       "dueDate": "2026-07-01",
       "duration": 90,
-      "notes": "Finish the project draft"
+      "notes": "Finish the draft and check formulas"
     },
     {
-      "id": "sample-2",
+      "id": "demo-2",
       "title": "Biology Quiz Review",
       "category": "Quiz",
       "dueDate": "2026-07-03",
       "duration": 45,
-      "notes": "Review chapter notes"
+      "notes": "Review chapter notes and key terms"
+    },
+    {
+      "id": "demo-3",
+      "title": "Programming Lab",
+      "category": "Project",
+      "dueDate": "2026-07-05",
+      "duration": 120,
+      "notes": "Finish DOM events section"
+    },
+    {
+      "id": "demo-4",
+      "title": "Group Study Session",
+      "category": "Study",
+      "dueDate": "2026-07-06",
+      "duration": 60,
+      "notes": "Meet group and prepare questions"
+    },
+    {
+      "id": "demo-5",
+      "title": "History Reading",
+      "category": "Reading",
+      "dueDate": "2026-07-08",
+      "duration": 50,
+      "notes": "Read pages 45 to 70"
+    },
+    {
+      "id": "demo-6",
+      "title": "Economics Case Notes",
+      "category": "Assignment",
+      "dueDate": "2026-07-10",
+      "duration": 75,
+      "notes": "Summarize the case study"
+    },
+    {
+      "id": "demo-7",
+      "title": "English Presentation Practice",
+      "category": "Presentation",
+      "dueDate": "2026-07-12",
+      "duration": 40,
+      "notes": "Practice speaking and timing"
+    },
+    {
+      "id": "demo-8",
+      "title": "Statistics Problem Set",
+      "category": "Assignment",
+      "dueDate": "2026-07-14",
+      "duration": 110,
+      "notes": "Complete probability questions"
     }
   ],
   "settings": {
