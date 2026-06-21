@@ -113,16 +113,6 @@ scripts/
   search.js
 ```
 
-## Milestone Checklist
-
-- M1 - Spec and Wireframes: in progress/completed for first version
-- M2 - Semantic HTML and Base CSS: in progress/completed for first version
-- M3 - Forms and Regex Validation: in progress/completed for first version
-- M4 - Render, Sort, and Regex Search: in progress/completed for first version
-- M5 - Stats and Cap Targets: planned
-- M6 - Persistence, Import/Export, and Settings: planned
-- M7 - Polish and Accessibility Audit: planned
-
 ## Technologies Used
 
 - HTML

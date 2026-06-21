@@ -1,0 +1,122 @@
+
+/* responsiveness */
+@media (max-width: 900px) {
+    .main-layout {
+        flex-direction: column;
+        padding: 0 24px 30px;
+        gap: 20px;
+    }
+
+    .side-panel {
+        width: 100%;
+    }
+
+    .panel-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .panel-link {
+        flex: 1;
+        text-align: center;
+        min-width: 120px;
+    }
+
+    .content-area {
+        padding: 24px;
+    }
+
+    .top-bar {
+        padding-left: 24px;
+    }
+
+    /* stack*/
+    .table-wrapper {
+        display: none;
+    }
+
+    .record-card-list {
+        display: flex;
+    }
+}
+
+/* phones */
+@media (max-width: 600px) {
+    .app-wrapper {
+        padding-top: 20px;
+    }
+
+    .top-bar {
+        padding: 0 16px;
+        margin-bottom: 20px;
+    }
+
+    .brand-row {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 16px;
+    }
+
+    .menu-toggle {
+        display: inline-block;
+        margin-top: 6px;
+    }
+
+    .site-name {
+        font-size: 22px;
+    }
+
+    .main-layout {
+        padding: 0 16px 24px;
+    }
+
+    .side-panel {
+        display: none;
+    }
+
+    .side-panel.menu-open {
+        display: block;
+    }
+
+    .panel-links {
+        flex-direction: column;
+    }
+
+    .panel-link {
+        width: 100%;
+    }
+
+    .content-area {
+        padding: 18px;
+        border-radius: 16px;
+    }
+
+    .page-title {
+        font-size: 20px;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .event-form,
+    .settings-block {
+        max-width: 100%;
+    }
+
+    .form-submit,
+    .form-cancel {
+        width: 100%;
+        text-align: center;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+    }
+}

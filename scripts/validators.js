@@ -1,3 +1,4 @@
+// title cannot be blank or only spaces
 function validateTitle(title) {
   const titlePattern = /^\S(?:.*\S)?$/;
 
@@ -8,6 +9,7 @@ function validateTitle(title) {
   return "Please enter a title.";
 }
 
+/* category is letters with spaces or hyphens */
 function validateCategory(category) {
   const categoryPattern = /^[A-Za-z]+(?:[ -][A-Za-z]+)*$/;
 
@@ -19,6 +21,7 @@ function validateCategory(category) {
 }
 
 function validateDueDate(dueDate) {
+  // expected format is yyyy-mm-dd
   const datePattern = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/;
 
   if (datePattern.test(dueDate)) {
@@ -29,6 +32,7 @@ function validateDueDate(dueDate) {
 }
 
 function validateDuration(duration) {
+  // whole number above zero
   const durationPattern = /^[1-9]\d*$/;
 
   if (durationPattern.test(duration)) {
@@ -39,6 +43,7 @@ function validateDuration(duration) {
 }
 
 function validateNotes(notes) {
+  // notes can be empty, but not script looking text
   const notesPattern = /^[A-Za-z0-9\s.,!?'"():;\-]*$/;
   const scriptPattern = /<\s*script|javascript:|onerror\s*=|onclick\s*=/i;
 
@@ -54,6 +59,7 @@ function validateNotes(notes) {
 }
 
 function validateEventForm(eventData) {
+  // return all errors at once so the user can fix them together
   const errors = {
     title: validateTitle(eventData.title),
     category: validateCategory(eventData.category),
@@ -66,6 +72,7 @@ function validateEventForm(eventData) {
 }
 
 function hasValidationErrors(errors) {
+  // beginner style check, very clear on purpose
   let hasErrors = false;
 
   if (errors.title !== "") {

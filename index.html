@@ -9,6 +9,7 @@
     <link rel="icon" href="assets/icons/june.png">
 
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/responsive.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,6 +22,7 @@
 </head>
 
 <body>
+     <a class="skip-link" href="#main-content">Skip to main content</a>
      <div class="app-wrapper">
 
         <header class="top-bar">
@@ -48,7 +50,7 @@
                 </nav>
             </aside>
 
-            <main class="content-area">
+            <main class="content-area" id="main-content">
 
                 <!-- Home -->
                 <section class="page-section" id="home" style="display:block;">
@@ -64,7 +66,7 @@
                         </div>
 
                         <div class="stat-card">
-                            <span class="stat-label">Total minutes</span>
+                            <span class="stat-label" id="duration-stat-label">Total minutes</span>
                             <span class="stat-value" id="stat-sum">0</span>
                         </div>
 
@@ -121,9 +123,9 @@
 
                     <div class="sort-toolbar">
                         <span class="sort-label">Sort by</span>
-                        <button class="sort-button" data-sort="date">Date</button>
-                        <button class="sort-button" data-sort="title">Title A to Z</button>
-                        <button class="sort-button" data-sort="amount">Duration</button>
+                        <button class="sort-button" data-sort="date" aria-pressed="true">Date</button>
+                        <button class="sort-button" data-sort="title" aria-pressed="false">Title A to Z</button>
+                        <button class="sort-button" data-sort="amount" aria-pressed="false">Duration</button>
                     </div>
 
                     
@@ -177,7 +179,7 @@
                         <span class="field-error" id="event-category-error" aria-live="polite"></span>
 
                         <label class="form-label">Due date</label>
-                        <input class="form-input" type="text" id="event-date"
+                        <input class="form-input" type="date" id="event-date" lang="en-CA"
                             placeholder="YYYY-MM-DD"
                             pattern="^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$">
                         <span class="field-error" id="event-date-error" aria-live="polite"></span>
@@ -240,11 +242,20 @@
 
                     <div class="settings-block">
                         <label class="form-label" for="weekly-cap">Weekly time cap (minutes)</label>
-                        <input class="form-input" type="text" id="weekly-cap" placeholder="e.g. 600"
+                        <input class="form-input" type="text" id="weekly-cap" inputmode="numeric" placeholder="e.g. 600"
                             pattern="^(0|[1-9]\d*)$">
                     </div>
 
-                    
+                    <div class="settings-block">
+                        <label class="form-label">Backup data</label>
+                        <div class="backup-buttons">
+                            <button class="form-cancel" type="button" id="export-data">Export JSON</button>
+                            <label class="import-label" for="import-data">Import JSON</label>
+                            <input class="import-input" type="file" id="import-data" accept=".json,application/json">
+                        </div>
+                    </div>
+
+                    <p class="settings-message" id="settings-message" aria-live="polite"></p>
 
                     <button class="form-submit" id="settings-save">Save Settings</button>
                 </section>

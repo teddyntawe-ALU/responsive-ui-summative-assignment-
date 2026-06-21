@@ -1,3 +1,4 @@
+// turns what the user typed into a regex safely
 function makeSearchRegex(searchText) {
   const cleanSearch = searchText.trim();
 
@@ -9,6 +10,7 @@ function makeSearchRegex(searchText) {
   }
 
   try {
+    // g = all matches, i = case insensitive
     return {
       regex: new RegExp(cleanSearch, "gi"),
       error: ""
@@ -22,6 +24,7 @@ function makeSearchRegex(searchText) {
 }
 
 function eventMatchesSearch(eventItem, regex) {
+  // search checks all the important event fields together
   const eventText = eventItem.title + " " +
     eventItem.category + " " +
     eventItem.dueDate + " " +
@@ -33,6 +36,7 @@ function eventMatchesSearch(eventItem, regex) {
 }
 
 function filterEventsBySearch(events, regex) {
+  // empty search means show everything
   const filteredEvents = [];
 
   if (regex === null) {
@@ -49,6 +53,7 @@ function filterEventsBySearch(events, regex) {
 }
 
 function sortEvents(events, sortType) {
+  // slice copies the list so the original state is not messed up
   const sortedEvents = events.slice();
 
   sortedEvents.sort(function (firstEvent, secondEvent) {

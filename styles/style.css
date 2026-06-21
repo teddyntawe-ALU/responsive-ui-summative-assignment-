@@ -35,6 +35,22 @@ body::before {
     z-index: 0;
 }
 
+.skip-link {
+    position: absolute;
+    left: 16px;
+    top: -50px;
+    z-index: 5;
+    background: #1db954;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    top: 16px;
+}
+
 .app-wrapper {
     position: relative;
     z-index: 1;
@@ -267,6 +283,7 @@ body::before {
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    animation: softShow 0.2s ease;
 }
 
 .event-card:hover {
@@ -608,124 +625,43 @@ body::before {
     display: none;
 }
 
-/* responsiveness */
-@media (max-width: 900px) {
-    .main-layout {
-        flex-direction: column;
-        padding: 0 24px 30px;
-        gap: 20px;
+.settings-message {
+    min-height: 20px;
+    color: #1db954;
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+
+@keyframes softShow {
+    from {
+        opacity: 0.6;
+        transform: translateY(4px);
     }
 
-    .side-panel {
-        width: 100%;
-    }
-
-    .panel-links {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .panel-link {
-        flex: 1;
-        text-align: center;
-        min-width: 120px;
-    }
-
-    .content-area {
-        padding: 24px;
-    }
-
-    .top-bar {
-        padding-left: 24px;
-    }
-
-    /* stack*/
-    .table-wrapper {
-        display: none;
-    }
-
-    .record-card-list {
-        display: flex;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-/* phones */
-@media (max-width: 600px) {
-    .app-wrapper {
-        padding-top: 20px;
-    }
+.trend-bars {
+    display: flex;
+    align-items: end;
+    gap: 5px;
+    height: 100%;
+    padding: 6px;
+}
 
-    .top-bar {
-        padding: 0 16px;
-        margin-bottom: 20px;
-    }
+.trend-bar {
+    flex: 1;
+    min-height: 6px;
+    border-radius: 5px;
+    background: #1db954;
+}
 
-    .brand-row {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: 16px;
-    }
-
-    .menu-toggle {
-        display: inline-block;
-        margin-top: 6px;
-    }
-
-    .site-name {
-        font-size: 22px;
-    }
-
-    .main-layout {
-        padding: 0 16px 24px;
-    }
-
-    .side-panel {
-        display: none;
-    }
-
-    .side-panel.menu-open {
-        display: block;
-    }
-
-    .panel-links {
-        flex-direction: column;
-    }
-
-    .panel-link {
-        width: 100%;
-    }
-
-    .content-area {
-        padding: 18px;
-        border-radius: 16px;
-    }
-
-    .page-title {
-        font-size: 20px;
-    }
-
-    .card-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .stats-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .event-form,
-    .settings-block {
-        max-width: 100%;
-    }
-
-    .form-submit,
-    .form-cancel {
-        width: 100%;
-        text-align: center;
-    }
-
-    .form-buttons {
-        flex-direction: column;
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
     }
 }
