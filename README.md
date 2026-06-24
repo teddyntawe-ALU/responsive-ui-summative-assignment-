@@ -9,7 +9,7 @@
 GitHub: https://github.com/teddyntawe-ALU  
 Email: [t.ntawe@alustudent.com](mailto:t.ntawe@alustudent.com)  
 Github Pages: https://teddyntawe-alu.github.io/responsive-ui-summative-assignment-/
-Demo Video: https://www.youtube.com
+Demo Video: https://www.youtube.com/watch?v=aCVvWXtwJDM 
 
 ## Overview
 
